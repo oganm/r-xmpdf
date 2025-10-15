@@ -138,7 +138,6 @@ find_pdftk_cmd <- function() {
     if (getOption("xmpdf_disable_pdftk", FALSE)) {
         ""
     } else {
-        cmd <- elseif(
         cmd <- ifelse(Sys.getenv('PDFTK_PATH')!='',Sys.getenv('PDFTK_PATH'),Sys.which('pdftk'))
         if (cmd == "")
             cmd <- Sys.which("pdftk-java")
